@@ -1,11 +1,12 @@
 * {
   box-sizing: border-box;
-  margin: 0;
 }
 svg {
-  height: 80vh;
+  height: 70vh;
 }
 body {
+  background-color: #cdd1e1;
+  margin: 0;
   font-family: "Inter";
   font-style: normal;
 }
@@ -18,7 +19,6 @@ path {
 path:hover {
   opacity: 50%;
   fill: #b99362;
-
   transform: translate(-5px, -5px);
 }
 .header {
@@ -31,6 +31,22 @@ path:hover {
   justify-content: center;
   align-items: center;
   margin-bottom: 49px;
+}
+.change {
+  margin: 0 5px;
+  display: flex;
+  align-items: center;
+}
+.change div {
+  cursor: pointer;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+}
+.change-site {
+  background-color: #e4f3fe;
+  color: #4a69bd;
 }
 .title {
   font-weight: 700;
@@ -64,4 +80,91 @@ path:hover {
 }
 .else {
   background: rgba(255, 255, 255, 0.6);
+}
+.container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "time time time"
+    ". content .";
+}
+.time {
+  grid-area: time;
+  display: flex;
+  justify-content: center;
+  margin-top: 45px;
+  margin-bottom: 26px;
+}
+.time div {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.05em;
+  color: #000000;
+}
+.content {
+  grid-area: content;
+}
+.section {
+  width: 100%;
+  display: flex;
+  margin-bottom: 40px;
+}
+.map {
+  margin-right: 61.91px;
+}
+.list {
+  width: 850px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.detail {
+  margin: 15px 5px;
+  width: 160px;
+  height: 160px;
+  background: #ffffff;
+  border-radius: 10px;
+}
+.detail:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.city-name {
+  background: #dfe4f2;
+  mix-blend-mode: normal;
+  border-radius: 10px;
+  height: 47px;
+  text-align: center;
+  padding-top: 12px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.05em;
+  color: #000000;
+}
+.image-style {
+  width: 70px;
+  height: 46.03px;
+  margin: 14px 45px;
+}
+.temp {
+  text-align: center;
+}
+.map {
+  position: relative;
+}
+.map-block {
+  /* position: absolute;
+  top: 13%;
+  left: 15%; */
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #b2e5f1;
+}
+.map-icon {
+  cursor: pointer;
+  margin: 15px;
+  width: 30px;
+  height: 30px;
 }
