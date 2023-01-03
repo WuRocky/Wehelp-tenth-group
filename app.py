@@ -1,4 +1,5 @@
 from flask import *
+from routes.weather import weather_api
 app=Flask(__name__)
 app.config["JSON_AS_ASCII"]=False
 app.config["TEMPLATES_AUTO_RELOAD"]=True
@@ -11,6 +12,8 @@ def index():
 @app.route("/latest")
 def latest():
 	return render_template("latest.html")
+
+app.register_blueprint(weather_api)
 
 if __name__ == "__main__":
   app.run(port=3000,debug=True)

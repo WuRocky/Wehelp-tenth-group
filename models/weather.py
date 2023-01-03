@@ -99,10 +99,10 @@ def GetWeather():
       item_MaxT_api[2],
       )
     )
-
+  
   return get_weathera_api
   
-GetWeather()
+# GetWeather()
 
 ### weather_now_data ###
 def weather_now_data( locationName, Wx, TEMP_value,  HUMD_value, H_24R_value):
@@ -163,6 +163,6 @@ def GetWeatherNow():
       elementName_H_24R_value,
       )
     )
-
+  
   return get_weather_now_api
-GetWeatherNow()
+# GetWeatherNow()
