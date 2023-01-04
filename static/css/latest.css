@@ -10,13 +10,17 @@ body {
   font-family: "Inter";
   font-style: normal;
 }
+a {
+  text-decoration: none;
+}
 path {
   cursor: pointer;
   stroke: white;
-  fill: #ffeaa7;
+  fill: #079992;
+  /* fill: #ffeaa7; */
   transition: 0.5s;
 }
-path:hover {
+.path-hover {
   opacity: 50%;
   fill: #b99362;
   transform: translate(-5px, -5px);
@@ -44,6 +48,10 @@ path:hover {
   justify-content: center;
   border-radius: 5px;
 }
+.change-btn:hover {
+  background-color: #e4f3fe;
+  color: #4a69bd;
+}
 .change-site {
   background-color: #e4f3fe;
   color: #4a69bd;
@@ -65,6 +73,10 @@ path:hover {
   width: 200px;
   height: 50px;
   margin: 0 30px;
+}
+.button:hover {
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .button div {
   font-weight: 400;
@@ -114,22 +126,30 @@ path:hover {
 .map {
   margin-right: 61.91px;
 }
-.list {
+.list1,
+.list2,
+.list3 {
   width: 850px;
   display: flex;
   flex-wrap: wrap;
 }
-.detail {
+.detail,
+.detail-2,
+.detail-3 {
   margin: 15px 5px;
   width: 160px;
   height: 160px;
   background: #ffffff;
   border-radius: 10px;
 }
-.detail:hover {
+.detail:hover,
+.detail-2:hover,
+.detail-3:hover {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
-.city-name {
+.city-name,
+.city-name-2,
+.city-name-3 {
   background: #dfe4f2;
   mix-blend-mode: normal;
   border-radius: 10px;
@@ -152,19 +172,46 @@ path:hover {
 }
 .map {
   position: relative;
+  z-index: 0;
 }
-.map-block {
-  /* position: absolute;
-  top: 13%;
-  left: 15%; */
+.map-block-1,
+.map-block-2,
+.map-block-3 {
+  cursor: pointer;
   width: 60px;
   height: 60px;
   border-radius: 50%;
   background-color: #b2e5f1;
+  position: absolute;
+  z-index: 2;
+}
+.text {
+  border-radius: 5px;
+  position: absolute;
+  z-index: 99;
+  background-color: grey;
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text div {
+  padding: 2px;
+  color: #000000;
+  text-align: center;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 15px;
 }
 .map-icon {
-  cursor: pointer;
+  position: relative;
+  z-index: 2;
   margin: 15px;
   width: 30px;
   height: 30px;
+}
+.none {
+  display: none;
 }
