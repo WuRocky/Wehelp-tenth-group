@@ -579,6 +579,17 @@ day2.addEventListener("click", ()=>{
                     county.classList.remove("opacity");
                 })
             });
+
+            const tabCounty = document.querySelectorAll(".tab");
+            tabCounty.forEach((county)=>{
+                county.addEventListener("mouseover", ()=>{
+                    document.getElementById(county.classList[1]).classList.add("active");
+                })
+                county.addEventListener("mouseout", ()=>{
+                    document.getElementById(county.classList[1]).classList.remove("active");
+                })
+
+            });
             return;
         }
         catch(error){
