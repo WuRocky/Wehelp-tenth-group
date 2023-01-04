@@ -34,10 +34,17 @@ body {
 body .main {
   display: flex;
   width: 1200px;
-  margin: 100px auto;
+  margin: 70px auto;
 }
 body .main .map {
-  width: 400px;
+  width: 440px;
+}
+body .main .map #default_map #position {
+  transition: transform 0.3s;
+}
+body .main .map #default_map #position .icon-in path {
+  fill: #e5e5e5 !important;
+  stroke: none !important;
 }
 body .main .map #default_map svg {
   max-width: 100%;
@@ -101,6 +108,9 @@ body .weather .weather-detail .today .today-total .today-middle {
   color: #ffffff;
   display: flex;
   justify-content: space-between;
+}
+body .weather .weather-detail .today .today-total .today-middle .tonight {
+  font-size: 15px;
 }
 body .weather .weather-detail .today .today-total .today-middle .horizontal-line {
   vertical-align: middle;

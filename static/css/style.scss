@@ -7,7 +7,6 @@
 $primary-color: #4667d1;
 header {
   height: 80px;
-
   .website-title {
     display: flex;
     justify-content: center;
@@ -33,10 +32,18 @@ body {
   .main {
     display: flex;
     width: 1200px;
-    margin: 100px auto;
+    margin: 70px auto;
     .map {
-      width: 400px;
+      width: 440px;
+      //   height: 400px;
       #default_map {
+        #position {
+          transition: transform 0.3s;
+          .icon-in path {
+            fill: #e5e5e5 !important;
+            stroke: none !important;
+          }
+        }
         svg {
           max-width: 100%;
           path {
@@ -50,6 +57,7 @@ body {
               transform: translate(-5px, -5px);
             }
           }
+
           a {
             cursor: pointer;
             &.is-active {
@@ -100,6 +108,9 @@ body {
             color: #ffffff;
             display: flex;
             justify-content: space-between;
+            .tonight {
+              font-size: 15px;
+            }
             .horizontal-line {
               vertical-align: middle;
               display: inline-block;
