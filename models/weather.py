@@ -55,7 +55,7 @@ def GetWeather():
   data = requests.get(get_weather).json()
   data_weather = data["records"]["location"]
 
-  get_weathera_api = []
+  get_weather_api = []
 
   for item in data_weather:
     ### 縣市 ###
@@ -80,7 +80,7 @@ def GetWeather():
     ### 最高溫度 ###
     item_MaxT_api = item["weatherElement"][4]["time"]
 
-    get_weathera_api.append(weather_data(
+    get_weather_api.append(weather_data(
       item_locationName,
       item_Wx_api[0],
       item_Wx_api[1],
@@ -99,10 +99,8 @@ def GetWeather():
       item_MaxT_api[2],
       )
     )
-  
-  return get_weathera_api
-  
-# GetWeather()
+  return get_weather_api
+
 
 ### weather_now_data ###
 def weather_now_data( locationName, Wx, TEMP_value,  HUMD_value, H_24R_value):
@@ -116,7 +114,7 @@ def weather_now_data( locationName, Wx, TEMP_value,  HUMD_value, H_24R_value):
 
 
 def GetWeatherNow():
-  get_weather_now = "https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=CWB-76A83F0A-AD80-483B-A8FA-0FADB18A69F7&format=JSON&stationId=CAL010,A0A9M0,467480,CAD020,CAD110,466910,467410,467080,CAE010,CAJ020,466990,467490,467660,467050,467650,467440,A0W030,CAQ020,466940,467350,A0G720,CAW010&elementName=TEMP,HUMD,24R&parameterName=CITY"
+  get_weather_now = "https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=CWB-76A83F0A-AD80-483B-A8FA-0FADB18A69F7&stationId=CAL010,466881,467480,CAD020,CAD110,466910,467410,467080,CAE010,CAJ020,466990,467490,467660,467050,467650,467440,A0W030,CAQ020,466940,467350,A0G720,CAW010&elementName=TEMP,HUMD,24R&parameterName=CITY"
   
   data_now = requests.get(get_weather_now).json()
   data_weather_now = data_now["records"]["location"]
@@ -131,22 +129,23 @@ def GetWeatherNow():
 
   for item in data_weather:
     item_Wx_api = item["weatherElement"][0]["time"][0]["parameter"]
-    ### 天氣狀況 ###
+    item_locationName = item['locationName']
+    
     locationName.append(item_Wx_api)
-
-
-  locationName[0], locationName[1], locationName[2], locationName[3], locationName[4], locationName[5], locationName[6], locationName[7], locationName[8], locationName[9], locationName[10], locationName[11], locationName[12],locationName[13], locationName[14], locationName[15], locationName[16], locationName[17], locationName[18], locationName[19], locationName[20], locationName[21], = locationName[2], locationName[4], locationName[8],locationName[13], locationName[0], locationName[21], locationName[15], locationName[17], locationName[11], locationName[19], locationName[20], locationName[10], locationName[9], locationName[12], locationName[18], locationName[5], locationName[1], locationName[7], locationName[6], locationName[16], locationName[3], locationName[14]
-
   
+
+  locationName[0], locationName[1], locationName[2], locationName[3], locationName[4], locationName[5], locationName[6], locationName[7], locationName[8], locationName[9], locationName[10], locationName[11], locationName[12],locationName[13], locationName[14], locationName[15], locationName[16], locationName[17], locationName[18], locationName[19], locationName[20], locationName[21], = locationName[2], locationName[4], locationName[8], locationName[13], locationName[0], locationName[21], locationName[15], locationName[17], locationName[11], locationName[19], locationName[1], locationName[20], locationName[10], locationName[9], locationName[12], locationName[18], locationName[5], locationName[7], locationName[6], locationName[16], locationName[3], locationName[14]
+
+
   ########################
   for item1,item2 in zip(locationName, data_weather_now):
     ### 縣市 ###
     item_locationName = item2['parameter'][0]['parameterValue']
-    # print(item1)
+    
     ### 溫度 ###
     TEMP = item2["weatherElement"][0]
     elementName_TEMP_value = TEMP["elementValue"]
-    # print(elementName_TEMP_value)
+    
     ### 濕度 ###
     HUMD = item2["weatherElement"][1]
     elementName_HUMD_value = HUMD["elementValue"]
@@ -165,4 +164,4 @@ def GetWeatherNow():
     )
   
   return get_weather_now_api
-# GetWeatherNow()
+GetWeatherNow()
