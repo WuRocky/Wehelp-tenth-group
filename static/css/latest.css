@@ -189,7 +189,7 @@ path {
   border-radius: 5px;
   position: absolute;
   z-index: 99;
-  background-color: grey;
+  background-color: rgba(63, 63, 66, 0.2);
   top: 50%;
   left: 100%;
   transform: translate(-50%, -50%);

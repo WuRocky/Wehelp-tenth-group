@@ -144,11 +144,10 @@ function weatherRainfall(result) {
 async function getDate() {
   const dateTag = document.querySelector(".date");
   const today = new Date();
+  const minute = (today.getMinutes() < 10 ? 0 : "") + today.getMinutes();
   let date = `${String(today.getFullYear())}/${String(
     today.getMonth() + 1
-  )}/${String(today.getDate())}　${String(today.getHours())}:${String(
-    today.getMinutes()
-  )}`;
+  )}/${String(today.getDate())}　${String(today.getHours())}:${String(minute)}`;
   dateTag.textContent = `資料時間：${date}`;
 }
 
@@ -225,11 +224,13 @@ async function test() {
 
   mapBlock2.forEach((e, index) => {
     e.onmouseover = function () {
+      mapOver(index);
       detail2[index].style.backgroundColor = "#ffeaa7";
       cityName2[index].style.backgroundColor = "#b2e5f1";
       e.style.backgroundColor = "#f6e58d";
     };
     e.onmouseout = function () {
+      mapOut(index);
       detail2[index].style.backgroundColor = "#ffffff";
       cityName2[index].style.backgroundColor = "#dfe4f2";
       e.style.backgroundColor = "#b2e5f1";
@@ -238,11 +239,13 @@ async function test() {
 
   detail2.forEach((e, index) => {
     e.onmouseover = function () {
+      mapOver(index);
       e.style.backgroundColor = "#ffeaa7";
       cityName2[index].style.backgroundColor = "#b2e5f1";
       mapBlock2[index].style.backgroundColor = "#f6e58d";
     };
     e.onmouseout = function () {
+      mapOut(index);
       e.style.backgroundColor = "#ffffff";
       cityName2[index].style.backgroundColor = "#dfe4f2";
       mapBlock2[index].style.backgroundColor = "#b2e5f1";
@@ -251,11 +254,13 @@ async function test() {
 
   mapBlock3.forEach((e, index) => {
     e.onmouseover = function () {
+      mapOver(index);
       detail3[index].style.backgroundColor = "#ffeaa7";
       cityName3[index].style.backgroundColor = "#b2e5f1";
       e.style.backgroundColor = "#f6e58d";
     };
     e.onmouseout = function () {
+      mapOut(index);
       detail3[index].style.backgroundColor = "#ffffff";
       cityName3[index].style.backgroundColor = "#dfe4f2";
       e.style.backgroundColor = "#b2e5f1";
@@ -264,11 +269,13 @@ async function test() {
 
   detail3.forEach((e, index) => {
     e.onmouseover = function () {
+      mapOver(index);
       e.style.backgroundColor = "#ffeaa7";
       cityName3[index].style.backgroundColor = "#b2e5f1";
       mapBlock3[index].style.backgroundColor = "#f6e58d";
     };
     e.onmouseout = function () {
+      mapOut(index);
       e.style.backgroundColor = "#ffffff";
       cityName3[index].style.backgroundColor = "#dfe4f2";
       mapBlock3[index].style.backgroundColor = "#b2e5f1";
