@@ -1,0 +1,152 @@
+body {
+    background-color: #CDD1E1;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.navwrap {
+    height: 220px;
+    background-color: #4667D1;
+    text-align: center;
+}
+
+.navbar {
+    margin: 0 auto;
+    max-width: 800px;
+    padding-top: 45px;
+}
+
+.Wtitle {
+    display: flex;
+    justify-content: center;
+}
+
+.Wtitle h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #FFFFFF;
+    cursor: pointer;
+    letter-spacing: 5px;
+}
+
+.Wtitle img {
+    margin-right: 10px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.forecast,
+.latest,
+.weekWeather {
+    background-color: rgb(255, 255, 255, 0.5);
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    margin: 0px 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.weekWeather {
+    background-color: #FFFFFF;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.215);
+}
+
+.forecast h2,
+.latest h2,
+.weekWeather h2 {
+    font-weight: 600;
+
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+.content {
+    background-color: #DFE4F2;
+    margin-top: 75px;
+}
+
+/* ----------- */
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table_top {
+    text-align: center;
+    height: 85px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+td,
+th {
+    border: 1.5px solid #CDD1E1;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.holiday {
+    background-color: #D14646;
+    color: #FFFFFF;
+}
+
+.header {
+    display: block;
+    justify-content: center;
+    text-align: center;
+}
+
+.heading p {
+    line-height: 25px;
+}
+
+.county {
+    width: 160px;
+    border-radius: 30px;
+}
+
+.morning {
+    background-color: #FFFFFF;
+    height: 50px;
+}
+
+.night {
+    height: 50px;
+}
+
+
+/* ---------- */
+
+.signal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.time {
+    width: 120px;
+}
+
+#day1,
+#day2,
+#day3,
+#day4,
+#day5,
+#day6,
+#day7 {
+    width: 160px;
+}
