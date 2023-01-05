@@ -338,7 +338,7 @@ def weather_week_data(
   ):
   return {
     "locationName":locationName,
-    "1st":{
+    "1":{
       "startTime": startTime_0,
       "endTime": endTime_0,
       "Wx_description": Wx_description_0,
@@ -346,7 +346,7 @@ def weather_week_data(
       "MinT":MinT_value_0,
       "MaxT":MaxT_value_0,
     },
-    "2nd":{
+    "2":{
       "startTime": startTime_1,
       "endTime": endTime_1,
       "Wx_description":  Wx_description_1,
@@ -354,7 +354,7 @@ def weather_week_data(
       "MinT":MinT_value_1,
       "MaxT":MaxT_value_1,
     },
-    "3rd":{
+    "3":{
       "startTime": startTime_2,
       "endTime": endTime_2,
       "Wx_description":  Wx_description_2,
@@ -362,7 +362,7 @@ def weather_week_data(
       "MinT":MinT_value_2,
       "MaxT":MaxT_value_2,
     },
-    "4th":{
+    "4":{
       "startTime": startTime_3,
       "endTime": endTime_3,
       "Wx_description": Wx_description_3,
@@ -370,7 +370,7 @@ def weather_week_data(
       "MinT":MinT_value_3,
       "MaxT":MaxT_value_3,
     },
-    "5th":{ 
+    "5":{ 
       "startTime": startTime_4,
       "endTime": endTime_4,
       "Wx_description":Wx_description_4,
@@ -378,7 +378,7 @@ def weather_week_data(
       "MinT":MinT_value_4,
       "MaxT":MaxT_value_4,
     },
-    "6th":{ 
+    "6":{ 
       "startTime": startTime_5,
       "endTime": endTime_5,
       "Wx_description":Wx_description_5,
@@ -386,7 +386,7 @@ def weather_week_data(
       "MinT":MinT_value_5,
       "MaxT":MaxT_value_5,
     },
-    "7th":{ 
+    "7":{ 
       "startTime": startTime_6,
       "endTime": endTime_6,
       "Wx_description":Wx_description_6,
@@ -394,7 +394,7 @@ def weather_week_data(
       "MinT":MinT_value_6,
       "MaxT":MaxT_value_6,
     },
-    "8th":{ 
+    "8":{ 
       "startTime": startTime_7,
       "endTime": endTime_7,
       "Wx_description":Wx_description_7,
@@ -402,7 +402,7 @@ def weather_week_data(
       "MinT":MinT_value_7,
       "MaxT":MaxT_value_7,
     },
-    "9th":{ 
+    "9":{ 
       "startTime": startTime_8,
       "endTime": endTime_8,
       "Wx_description":Wx_description_8,
@@ -410,7 +410,7 @@ def weather_week_data(
       "MinT":MinT_value_8,
       "MaxT":MaxT_value_8,
     },
-    "10th":{ 
+    "10":{ 
       "startTime": startTime_9,
       "endTime": endTime_9,
       "Wx_description":Wx_description_9,
@@ -418,7 +418,7 @@ def weather_week_data(
       "MinT":MinT_value_9,
       "MaxT":MaxT_value_9,
     },
-    "11th":{ 
+    "11":{ 
       "startTime": startTime_10,
       "endTime": endTime_10,
       "Wx_description":Wx_description_10,
@@ -426,7 +426,7 @@ def weather_week_data(
       "MinT":MinT_value_10,
       "MaxT":MaxT_value_10,
     },
-    "12th":{ 
+    "12":{ 
       "startTime": startTime_11,
       "endTime": endTime_11,
       "Wx_description":Wx_description_11,
@@ -434,7 +434,7 @@ def weather_week_data(
       "MinT":MinT_value_11,
       "MaxT":MaxT_value_11,
     },
-    "13th":{ 
+    "13":{ 
       "startTime": startTime_12,
       "endTime": endTime_12,
       "Wx_description":Wx_description_12,
@@ -442,7 +442,7 @@ def weather_week_data(
       "MinT":MinT_value_12,
       "MaxT":MaxT_value_12,
     },
-    "14th":{ 
+    "14":{ 
       "startTime": startTime_13,
       "endTime": endTime_13,
       "Wx_description":Wx_description_13,
