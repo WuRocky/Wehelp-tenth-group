@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="weather_week.css">
+</head>
+
+<body>
+    <div class="navwrap">
+        <div class="navbar">
+            <div class="Wtitle">
+                <img src="superman.png">
+                <h2>世界無敵氣象網</h2>
+            </div>
+            <div class="menu">
+                <div class="forecast">
+                    <h2>縣市預報總覽</h2>
+                </div>
+                <div class="latest">
+                    <h2>最新天氣觀測</h2>
+                </div>
+                <div class="weekWeather">
+                    <h2>一週天氣預報</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content">
+            <table>
+                <tr class="table_top">
+                    <th class="county">
+                        <div class="heading">
+                            <p>縣市</p>
+                        </div>
+                    </th>
+                    <th class="time">
+                        <div class="heading">
+                            <p>時間</p>
+                        </div>
+                    </th>
+                    <th id="day1">
+                        <div class="heading">
+                            <p>01/04</p>
+                            <p>星期三</p>
+                        </div>
+                    </th>
+                    <th id="day2">
+                        <div class="heading">
+                            <p>01/05</p>
+                            <p>星期四</p>
+                        </div>
+                    </th>
+                    <th id="day3">
+                        <div class="heading">
+                            <p>01/06</p>
+                            <p>星期五</p>
+                        </div>
+                    </th>
+                    <th id="day4" class="holiday">
+                        <div class="heading">
+                            <p>01/07</p>
+                            <p>星期六</p>
+                        </div>
+                    </th>
+                    <th id="day5" class="holiday">
+                        <div class="heading">
+                            <p>01/08</p>
+                            <p>星期日</p>
+                        </div>
+                    </th>
+                    <th id="day6">
+                        <div class="heading">
+                            <p>01/09</p>
+                            <p>星期一</p>
+                        </div>
+                    </th>
+                    <th id="day7">
+                        <div class="heading">
+                            <p>01/10</p>
+                            <p>星期二</p>
+                        </div>
+                    </th>
+                </tr>
+
+                <tr class="morning">
+                    <th rowspan="2">
+                        <div>基隆市</div>
+                    </th>
+                    <td>
+                        <div>白天</div>
+                    </td>
+                    <td class="day1">
+                        <span class="signal">
+                            <img src="/V8/assets/img/weather_icons/weathers/svg_icon/day/14.svg" title="陰有雨">
+                            <p>17°-18°</p>
+                        </span>
+                    </td>
+                    <td class="day2">
+                        <span class="signal">
+                            <img src="/V8/assets/img/weather_icons/weathers/svg_icon/day/14.svg" title="陰有雨">
+                            <p>16°-17°</p>
+                        </span>
+                    </td>
+                    <td class="day3">
+                        <span class="signal">
+                            <img src="/V8/assets/img/weather_icons/weathers/svg_icon/day/14.svg" title="陰有雨">
+                            <p>16 - 17</p>
+                        </span>
+                    </td>
+                    <td class="day4">
+                        <span class="signal">
+                            <img src="/V8/assets/img/weather_icons/weathers/svg_icon/day/02.svg" title="晴時多雲">
+                            <p>16 - 17</p>
+                        </span>
+                    </td>
+                    <td class="day5">
+                        <span class="signal">
+                            <img src="/V8/assets/img/weather_icons/weathers/svg_icon/day/02.svg" title="晴時多雲">
+                            <p>14 - 19</p>
+                        </span>
+                    </td>
+                    <td class="day6">
+                        <span class="signal">
+                            <img src="/V8/assets/img/weather_icons/weathers/svg_icon/day/02.svg" title="晴時多雲">
+                            <p>14 - 19</p>
+                        </span>
+                    </td>
+                    <td class="day7">
+                        <span class="signal">
+                            <img src="/V8/assets/img/weather_icons/weathers/svg_icon/day/02.svg" title="晴時多雲">
+                            <p>14 - 19</p>
+                        </span>
+                    </td>
+                </tr>
+                <tr class="night">
+                    <td>
+                        <div>晚上</div>
+                    </td>
+                    <td class="day1">
+                        <span class="signal">
+                            <img src="/V8/assets/img/weather_icons/weathers/svg_icon/night/14.svg" title="陰有雨">
+                            <p>17 - 17</p>
+                        </span>
+                    </td>
+                    <td class="day2">
+                        <span class="signal">
+                            <img src="/V8/assets/img/weather_icons/weathers/svg_icon/night/14.svg" title="陰有雨">
+                            <p>18 - 18</p>
+                        </span>
+                    </td>
+                    <td class="day3">
+                        <span class="signal">
+                            <img src="/V8/assets/img/weather_icons/weathers/svg_icon/night/04.svg" title="多雲">
+                            <p>16 - 17</p>
+                        </span>
+                    </td>
+                    <td class="day4">
+                        <span class="signal">
+                            <img src="/V8/assets/img/weather_icons/weathers/svg_icon/night/02.svg" title="晴時多雲">
+                            <p>15 - 16</p>
+                        </span>
+                    </td>
+                    <td class="day5">
+                        <span class="signal">
+                            <img src="/V8/assets/img/weather_icons/weathers/svg_icon/night/03.svg" title="多雲時晴">
+                            <p>17 - 18</p>
+                        </span>
+                    </td>
+                    <td class="day6">
+                        <span class="signal">
+                            <img src="/V8/assets/img/weather_icons/weathers/svg_icon/night/02.svg" title="晴時多雲">
+                            <p>18 - 19</p>
+                        </span>
+                    </td>
+                    <td class="day7">
+                        <span class="signal">
+                            <img src="/V8/assets/img/weather_icons/weathers/svg_icon/night/08.svg" title="多雲短暫雨">
+                            <p>16 - 17</p>
+                        </span>
+                    </td>
+                </tr>
+
+
+            </table>
+        </div>
+    </div>
+    <script src="weather_week.js"></script>
+</body>
+
+</html>
