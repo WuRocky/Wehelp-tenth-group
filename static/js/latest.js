@@ -104,7 +104,7 @@ function weatherHumidity(result) {
 function weatherRainfall(result) {
   for (let i = 0; i < result.length; i++) {
     // 24hr降雨量
-    let H_24R = result[i].H_24R < 0 ? " " : result[i].H_24R + "mm";
+    let H_24R = result[i].H_24R < 0 ? "0.0mm" : result[i].H_24R + "mm";
     let value = Number(result[i].H_24R);
     let newValue;
     if (value < 5) {
