@@ -34,6 +34,7 @@ body {
     width: 1200px;
     margin: 70px auto;
     .map {
+      position: relative;
       width: 440px;
       //   height: 400px;
       #default_map {
@@ -53,7 +54,8 @@ body {
             stroke-miterlimit: 10;
             stroke-dashoffset: 0 !important;
             &:hover {
-              fill: #079992;
+              fill: #b99362;
+              opacity: 50%;
               transform: translate(-5px, -5px);
             }
           }
@@ -69,7 +71,113 @@ body {
         }
       }
     }
+    .float-icon {
+      background-color: #ffffff;
+      position: absolute;
+      cursor: pointer;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      z-index: 2;
+      &:hover {
+        background-color: rgb(255, 211, 131);
+      }
+      img {
+        margin: 15px;
+        width: 30px;
+        height: 30px;
+      }
+    }
   }
+  #icon-1 {
+    left: 89%;
+    top: 12%;
+  }
+  #icon-2 {
+    left: 80%;
+    top: 0%;
+  }
+  #icon-3 {
+    left: 63%;
+    top: 1%;
+  }
+  #icon-4 {
+    left: 48%;
+    top: 5%;
+  }
+  #icon-5 {
+    left: 37%;
+    top: 13%;
+  }
+  #icon-6 {
+    left: 26%;
+    top: 22%;
+  }
+  #icon-7 {
+    left: 18%;
+    top: 32%;
+  }
+  #icon-8 {
+    left: 12%;
+    top: 43%;
+  }
+  #icon-9 {
+    left: 11%;
+    top: 54%;
+  }
+  #icon-10 {
+    left: 15%;
+    top: 66%;
+  }
+  #icon-11 {
+    left: 22%;
+    top: 77%;
+  }
+  #icon-12 {
+    left: 32%;
+    top: 86%;
+  }
+  #icon-13 {
+    left: 43%;
+    top: 95%;
+  }
+  #icon-14 {
+    left: 63%;
+    top: 76%;
+  }
+  #icon-15 {
+    left: 82%;
+    top: 22%;
+  }
+  #icon-16 {
+    left: 82%;
+    top: 45%;
+  }
+  #icon-17 {
+    left: 3%;
+    top: 2%;
+  }
+  #icon-18 {
+    left: 50%;
+    top: 44%;
+  }
+  #icon-19 {
+    left: 45%;
+    top: 61%;
+  }
+  #icon-20 {
+    top: 22%;
+    left: -10%;
+  }
+  #icon-21 {
+    top: 44%;
+    left: -10%;
+  }
+  #icon-22 {
+    left: 63%;
+    top: 25%;
+  }
+
   .weather {
     margin: auto;
     margin-left: 80px;
