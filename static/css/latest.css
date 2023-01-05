@@ -37,11 +37,12 @@ path {
   margin-bottom: 49px;
 }
 .change {
-  margin: 0 5px;
+  /* margin: 0 5px; */
   display: flex;
   align-items: center;
 }
 .change div {
+  padding: 5px 0;
   cursor: pointer;
   flex-grow: 1;
   display: flex;
@@ -49,11 +50,13 @@ path {
   border-radius: 5px;
 }
 .change-btn:hover {
+  font-weight: bold;
   background-color: #e4f3fe;
   color: #4a69bd;
 }
 .change-site {
   background-color: #e4f3fe;
+  font-weight: bold;
   color: #4a69bd;
 }
 .title {

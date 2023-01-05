@@ -104,7 +104,7 @@ function weatherHumidity(result) {
 function weatherRainfall(result) {
   for (let i = 0; i < result.length; i++) {
     // 24hr降雨量
-    let H_24R = result[i].H_24R < 0 ? " - " : result[i].H_24R;
+    let H_24R = result[i].H_24R < 0 ? " " : result[i].H_24R + "mm";
     let value = Number(result[i].H_24R);
     let newValue;
     if (value < 5) {
@@ -121,7 +121,7 @@ function weatherRainfall(result) {
     imgTag.className = "image-style";
     let tempTag = document.createElement("div");
     tempTag.className = "temp";
-    tempTag.textContent = `${H_24R}mm`;
+    tempTag.textContent = H_24R;
     let weatherTag = document.createElement("div");
     weatherTag.className = "weather";
     weatherTag.appendChild(imgTag);
@@ -279,7 +279,7 @@ async function test() {
       mapOut(index);
       e.style.backgroundColor = "#ffffff";
       cityName3[index].style.backgroundColor = "#dfe4f2";
-      mapBlock2[index].style.backgroundColor = "rgba(178, 229, 241, 0.8)";
+      mapBlock3[index].style.backgroundColor = "rgba(178, 229, 241, 0.8)";
     };
   });
 }
