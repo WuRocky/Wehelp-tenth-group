@@ -19,13 +19,14 @@ function weatherStatus(result) {
   for (let i = 0; i < result.length; i++) {
     let imgValue =
       (result[i].Wx.parameterValue < 10 ? 0 : "") + result[i].Wx.parameterValue;
+    let temp = result[i].TEMP == "-99" ? " - " : result[i].TEMP;
     // 天氣狀況
     let imgTag = document.createElement("img");
     imgTag.src = `https://www.cwb.gov.tw/V8/assets/img/weather_icons/weathers/svg_icon/${newNowHour}/${imgValue}.svg`;
     imgTag.className = "image-style";
     let tempTag = document.createElement("div");
     tempTag.className = "temp";
-    tempTag.textContent = `${result[i].TEMP}°C`;
+    tempTag.textContent = `${temp}°C`;
     let weatherTag = document.createElement("div");
     weatherTag.className = "weather";
     weatherTag.appendChild(imgTag);
@@ -63,9 +64,16 @@ function weatherHumidity(result) {
     // 濕度
     let newHUMD = Number(result[i].HUMD) * 100;
     let newValue = Number(result[i].HUMD.substring(0, 3)) * 10;
+    let imgSrc = `https://www.cwb.gov.tw/V8/assets/img/icons/humidity/humidity${newValue}.svg`;
+    let imgTagClassName = "image-style";
+    if (newValue < 0) {
+      imgSrc = "/static/images/fix_icon.png";
+      imgTagClassName = "image-style-fix";
+      newHUMD = " - ";
+    }
     let imgTag = document.createElement("img");
-    imgTag.src = `https://www.cwb.gov.tw/V8/assets/img/icons/humidity/humidity${newValue}.svg`;
-    imgTag.className = "image-style";
+    imgTag.src = imgSrc;
+    imgTag.className = imgTagClassName;
     let tempTag = document.createElement("div");
     tempTag.className = "temp";
     tempTag.textContent = `${newHUMD}%`;
@@ -85,7 +93,7 @@ function weatherHumidity(result) {
 
     let imgTag1 = document.createElement("img");
     imgTag1.className = "map-icon";
-    imgTag1.src = `https://www.cwb.gov.tw/V8/assets/img/icons/humidity/humidity${newValue}.svg`;
+    imgTag1.src = imgSrc;
     let mapBlockTag = document.createElement("div");
     mapBlockTag.className = `map-block-2 icon-${i} none`;
     mapBlockTag.appendChild(imgTag1);
@@ -97,8 +105,8 @@ function weatherHumidity(result) {
 function weatherRainfall(result) {
   for (let i = 0; i < result.length; i++) {
     // 24hr降雨量
+    let H_24R = result[i].H_24R < 0 ? " - " : result[i].H_24R;
     let value = Number(result[i].H_24R);
-    // console.log(value);
     let newValue;
     if (value < 5) {
       newValue = "01";
@@ -115,7 +123,7 @@ function weatherRainfall(result) {
     imgTag.className = "image-style";
     let tempTag = document.createElement("div");
     tempTag.className = "temp";
-    tempTag.textContent = `${result[i].H_24R}mm`;
+    tempTag.textContent = `${H_24R}mm`;
     let weatherTag = document.createElement("div");
     weatherTag.className = "weather";
     weatherTag.appendChild(imgTag);
@@ -144,7 +152,8 @@ function weatherRainfall(result) {
 async function getDate() {
   const dateTag = document.querySelector(".date");
   const today = new Date();
-  const minute = (today.getMinutes() < 10 ? 0 : "") + today.getMinutes();
+  const minute =
+    String(today.getMinutes() < 10 ? 0 : "") + String(today.getMinutes());
   let date = `${String(today.getFullYear())}/${String(
     today.getMonth() + 1
   )}/${String(today.getDate())}　${String(today.getHours())}:${String(minute)}`;
@@ -196,14 +205,12 @@ async function test() {
       text[index].classList.remove("none");
       detail[index].style.backgroundColor = "#ffeaa7";
       cityName[index].style.backgroundColor = "#b2e5f1";
-      e.style.backgroundColor = "#f6e58d";
     };
     e.onmouseout = function () {
       mapOut(index);
       text[index].classList.add("none");
       detail[index].style.backgroundColor = "#ffffff";
       cityName[index].style.backgroundColor = "#dfe4f2";
-      e.style.backgroundColor = "#b2e5f1";
     };
   });
 
@@ -212,13 +219,13 @@ async function test() {
       mapOver(index);
       e.style.backgroundColor = "#ffeaa7";
       cityName[index].style.backgroundColor = "#b2e5f1";
-      mapBlock1[index].style.backgroundColor = "#f6e58d";
+      mapBlock1[index].style.backgroundColor = "rgba(246, 229, 141, 0.8)";
     };
     e.onmouseout = function () {
       mapOut(index);
       e.style.backgroundColor = "#ffffff";
       cityName[index].style.backgroundColor = "#dfe4f2";
-      mapBlock1[index].style.backgroundColor = "#b2e5f1";
+      mapBlock1[index].style.backgroundColor = "rgba(178, 229, 241, 0.8)";
     };
   });
 
@@ -227,13 +234,11 @@ async function test() {
       mapOver(index);
       detail2[index].style.backgroundColor = "#ffeaa7";
       cityName2[index].style.backgroundColor = "#b2e5f1";
-      e.style.backgroundColor = "#f6e58d";
     };
     e.onmouseout = function () {
       mapOut(index);
       detail2[index].style.backgroundColor = "#ffffff";
       cityName2[index].style.backgroundColor = "#dfe4f2";
-      e.style.backgroundColor = "#b2e5f1";
     };
   });
 
@@ -242,13 +247,13 @@ async function test() {
       mapOver(index);
       e.style.backgroundColor = "#ffeaa7";
       cityName2[index].style.backgroundColor = "#b2e5f1";
-      mapBlock2[index].style.backgroundColor = "#f6e58d";
+      mapBlock2[index].style.backgroundColor = "rgba(246, 229, 141, 0.8)";
     };
     e.onmouseout = function () {
       mapOut(index);
       e.style.backgroundColor = "#ffffff";
       cityName2[index].style.backgroundColor = "#dfe4f2";
-      mapBlock2[index].style.backgroundColor = "#b2e5f1";
+      mapBlock2[index].style.backgroundColor = "rgba(178, 229, 241, 0.8)";
     };
   });
 
@@ -257,13 +262,11 @@ async function test() {
       mapOver(index);
       detail3[index].style.backgroundColor = "#ffeaa7";
       cityName3[index].style.backgroundColor = "#b2e5f1";
-      e.style.backgroundColor = "#f6e58d";
     };
     e.onmouseout = function () {
       mapOut(index);
       detail3[index].style.backgroundColor = "#ffffff";
       cityName3[index].style.backgroundColor = "#dfe4f2";
-      e.style.backgroundColor = "#b2e5f1";
     };
   });
 
@@ -272,13 +275,13 @@ async function test() {
       mapOver(index);
       e.style.backgroundColor = "#ffeaa7";
       cityName3[index].style.backgroundColor = "#b2e5f1";
-      mapBlock3[index].style.backgroundColor = "#f6e58d";
+      mapBlock3[index].style.backgroundColor = "rgba(246, 229, 141, 0.8)";
     };
     e.onmouseout = function () {
       mapOut(index);
       e.style.backgroundColor = "#ffffff";
       cityName3[index].style.backgroundColor = "#dfe4f2";
-      mapBlock3[index].style.backgroundColor = "#b2e5f1";
+      mapBlock2[index].style.backgroundColor = "rgba(178, 229, 241, 0.8)";
     };
   });
 }
