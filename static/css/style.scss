@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Noto Sans TC", sans-serif;
 }
 
 $primary-color: #4667d1;
@@ -23,7 +24,7 @@ header {
     }
 
     h2 {
-      letter-spacing: 3px;
+      letter-spacing: 0.25em;
     }
   }
 }
@@ -323,6 +324,13 @@ body {
         border-radius: 30px;
         width: 30%;
         height: 100px;
+        -webkit-transition: all 0.15s ease-in-out;
+        transition: all 0.15s ease-in-out;
+        &:hover {
+          box-shadow: 0 0 10px 0 $primary-color inset,
+            0 0 20px 2px $primary-color;
+          border: 3px solid $primary-color;
+        }
       }
     }
   }
