@@ -26,7 +26,7 @@ path {
   transform: translate(-5px, -5px);
 }
 .header {
-  background-color: #4a69bd;
+  background-color: #4667d1;
   height: 220px;
   padding-top: 42px;
 }
@@ -145,7 +145,7 @@ path {
 .detail:hover,
 .detail-2:hover,
 .detail-3:hover {
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .city-name,
 .city-name-2,
@@ -167,6 +167,12 @@ path {
   height: 46.03px;
   margin: 14px 45px;
 }
+.image-style-fix {
+  width: 50px;
+  height: 50px;
+  margin: 14px 55px;
+}
+
 .temp {
   text-align: center;
 }
@@ -181,9 +187,15 @@ path {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: #b2e5f1;
+  background-color: rgba(178, 229, 241, 0.8);
   position: absolute;
   z-index: 2;
+}
+.map-block-1:hover,
+.map-block-2:hover,
+.map-block-3:hover {
+  background-color: rgba(246, 229, 141, 0.8);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .text {
   border-radius: 5px;
