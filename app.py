@@ -22,6 +22,11 @@ def county():
     return render_template("county.html")
 
 
+@app.route("/weather_week")
+def weather_week():
+    return render_template("weather_week.html")
+
+
 app.register_blueprint(weather_api)
 
 if __name__ == "__main__":
