@@ -20,7 +20,7 @@ const nowDate = document.querySelector(".now_date");
 getData();
 async function getData(){
     try{
-        let url = "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-76A83F0A-AD80-483B-A8FA-0FADB18A69F7";
+        let url = "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-01BF314A-7D06-48D8-85F9-412B4B1DE17B";
         response = await fetch(url);
         response = await response.json();
         response =  response.records.location;
@@ -133,7 +133,6 @@ async function getData(){
                 document.getElementById(county.name).classList.add("active");
                 document.querySelector("." + county.name).classList.add("active_tab");
                 county.classList.add("opacity");
-
             })
     
             county.addEventListener("mouseout", ()=>{
@@ -147,11 +146,12 @@ async function getData(){
         tabCounty.forEach((county)=>{
             county.addEventListener("mouseover", ()=>{
                 document.getElementById(county.classList[1]).classList.add("active");
+                document.getElementsByName(county.classList[1])[0].classList.add("opacity");
             })
             county.addEventListener("mouseout", ()=>{
                 document.getElementById(county.classList[1]).classList.remove("active");
+                document.getElementsByName(county.classList[1])[0].classList.remove("opacity");
             })
-
         });
         return;
     }
@@ -171,7 +171,7 @@ day0.addEventListener("click", ()=>{
     getData();
     async function getData(){
         try{
-            let url = "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-76A83F0A-AD80-483B-A8FA-0FADB18A69F7";
+            let url = "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-01BF314A-7D06-48D8-85F9-412B4B1DE17B";
             response = await fetch(url);
             response = await response.json();
             response =  response.records.location;
@@ -298,11 +298,12 @@ day0.addEventListener("click", ()=>{
             tabCounty.forEach((county)=>{
                 county.addEventListener("mouseover", ()=>{
                     document.getElementById(county.classList[1]).classList.add("active");
+                    document.getElementsByName(county.classList[1])[0].classList.add("opacity");
                 })
                 county.addEventListener("mouseout", ()=>{
                     document.getElementById(county.classList[1]).classList.remove("active");
+                    document.getElementsByName(county.classList[1])[0].classList.remove("opacity");
                 })
-
             });
             return;
         }
@@ -324,7 +325,7 @@ day1.addEventListener("click", ()=>{
     getData();
     async function getData(){
         try{
-            let url = "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-76A83F0A-AD80-483B-A8FA-0FADB18A69F7";
+            let url = "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-01BF314A-7D06-48D8-85F9-412B4B1DE17B";
             response = await fetch(url);
             response = await response.json();
             response =  response.records.location;
@@ -441,11 +442,12 @@ day1.addEventListener("click", ()=>{
             tabCounty.forEach((county)=>{
                 county.addEventListener("mouseover", ()=>{
                     document.getElementById(county.classList[1]).classList.add("active");
+                    document.getElementsByName(county.classList[1])[0].classList.add("opacity");
                 })
                 county.addEventListener("mouseout", ()=>{
                     document.getElementById(county.classList[1]).classList.remove("active");
+                    document.getElementsByName(county.classList[1])[0].classList.remove("opacity");
                 })
-
             });
             return;
         }
@@ -584,11 +586,12 @@ day2.addEventListener("click", ()=>{
             tabCounty.forEach((county)=>{
                 county.addEventListener("mouseover", ()=>{
                     document.getElementById(county.classList[1]).classList.add("active");
+                    document.getElementsByName(county.classList[1])[0].classList.add("opacity");
                 })
                 county.addEventListener("mouseout", ()=>{
                     document.getElementById(county.classList[1]).classList.remove("active");
+                    document.getElementsByName(county.classList[1])[0].classList.remove("opacity");
                 })
-
             });
             return;
         }
