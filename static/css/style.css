@@ -37,6 +37,7 @@ body .main {
   margin: 70px auto;
 }
 body .main .map {
+  position: relative;
   width: 440px;
 }
 body .main .map #default_map #position {
@@ -57,7 +58,8 @@ body .main .map #default_map svg path {
   stroke-dashoffset: 0 !important;
 }
 body .main .map #default_map svg path:hover {
-  fill: #079992;
+  fill: #b99362;
+  opacity: 50%;
   transform: translate(-5px, -5px);
 }
 body .main .map #default_map svg a {
@@ -65,6 +67,111 @@ body .main .map #default_map svg a {
 }
 body .main .map #default_map svg a.is-active path {
   fill: #079992;
+}
+body .main .float-icon {
+  background-color: #ffffff;
+  position: absolute;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  z-index: 2;
+}
+body .main .float-icon:hover {
+  background-color: rgb(255, 211, 131);
+}
+body .main .float-icon img {
+  margin: 15px;
+  width: 30px;
+  height: 30px;
+}
+body #icon-1 {
+  left: 89%;
+  top: 12%;
+}
+body #icon-2 {
+  left: 80%;
+  top: 0%;
+}
+body #icon-3 {
+  left: 63%;
+  top: 1%;
+}
+body #icon-4 {
+  left: 48%;
+  top: 5%;
+}
+body #icon-5 {
+  left: 37%;
+  top: 13%;
+}
+body #icon-6 {
+  left: 26%;
+  top: 22%;
+}
+body #icon-7 {
+  left: 18%;
+  top: 32%;
+}
+body #icon-8 {
+  left: 12%;
+  top: 43%;
+}
+body #icon-9 {
+  left: 11%;
+  top: 54%;
+}
+body #icon-10 {
+  left: 15%;
+  top: 66%;
+}
+body #icon-11 {
+  left: 22%;
+  top: 77%;
+}
+body #icon-12 {
+  left: 32%;
+  top: 86%;
+}
+body #icon-13 {
+  left: 43%;
+  top: 95%;
+}
+body #icon-14 {
+  left: 63%;
+  top: 76%;
+}
+body #icon-15 {
+  left: 82%;
+  top: 22%;
+}
+body #icon-16 {
+  left: 82%;
+  top: 45%;
+}
+body #icon-17 {
+  left: 3%;
+  top: 2%;
+}
+body #icon-18 {
+  left: 50%;
+  top: 44%;
+}
+body #icon-19 {
+  left: 45%;
+  top: 61%;
+}
+body #icon-20 {
+  top: 22%;
+  left: -10%;
+}
+body #icon-21 {
+  top: 44%;
+  left: -10%;
+}
+body #icon-22 {
+  left: 63%;
+  top: 25%;
 }
 body .weather {
   margin: auto;
