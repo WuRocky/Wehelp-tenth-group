@@ -2,6 +2,9 @@ let ele;
 let day1;
 let day2;
 let day3;
+let newHour1;
+let newHour2;
+let newHour3;
 const pin = document.querySelector("#position");
 const place = document.querySelectorAll(".place");
 const weatherDetail = document.querySelector(".weather-detail");
@@ -27,8 +30,7 @@ const imgThird = document.querySelector("#img-third");
 const allForcast = document.querySelector("#all-forcast");
 const weekForcast = document.querySelector("#week-forcast");
 const newForcast = document.querySelector("#new-forcast");
-const hour = new Date().getHours();
-const newHour = hour > 18 ? "night" : "day";
+
 window.addEventListener("load", () => {
   getData("臺北市");
 });
@@ -126,33 +128,9 @@ async function getData(place) {
     const baseUrl =
       "https://www.cwb.gov.tw/V8/assets/img/weather_icons/weathers/svg_icon/";
 
-    Object.keys(iconId).forEach((key) => {
-      const eachImg = document.querySelector(`#${iconId[key]} img`);
-      let parameter = data[key - 1].Wx.Wx_firt.parameter.parameterValue;
-      if (parameter < 10) {
-        parameter = `0${parameter}`;
-      }
-      eachImg.src = `${baseUrl}/${newHour}/${parameter}.svg`;
-    });
     for (let i = 0; i < data.length; i++) {
       if (data[i]["locationName"] === place) {
         city.textContent = data[i]["locationName"];
-        let img1 = data[i].Wx.Wx_firt.parameter.parameterValue;
-        let img2 = data[i].Wx.Wx_second.parameter.parameterValue;
-        let img3 = data[i].Wx.Wx_third.parameter.parameterValue;
-        const baseUrl =
-          "https://www.cwb.gov.tw/V8/assets/img/weather_icons/weathers/svg_icon/";
-        const images = [img1, img2, img3];
-        const formattedImages = images.map((img) => {
-          if (img < 10) {
-            return `0${img}`;
-          }
-          return img;
-        });
-        [img1, img2, img3] = formattedImages;
-        imgFirst.src = `${baseUrl}/${newHour}/${formattedImages[0]}.svg`;
-        imgSecond.src = `${baseUrl}/${newHour}/${formattedImages[1]}.svg`;
-        imgThird.src = `${baseUrl}/${newHour}/${formattedImages[2]}.svg`;
 
         const low1 = data[i].MinT.MinT_firt.parameter.parameterName;
         const low2 = data[i].MinT.MinT_second.parameter.parameterName;
@@ -186,6 +164,9 @@ async function getData(place) {
           day1 = "今日凌晨";
           day2 = "今日白天";
           day3 = "今日晚上";
+          newHour1 = "day";
+          newHour2 = "day";
+          newHour3 = "night";
           tonight.textContent = `${day1} ${start1}-${end1}`;
           daySecond.textContent = day2;
           dayThird.textContent = day3;
@@ -193,6 +174,9 @@ async function getData(place) {
           day1 = "今日白天";
           day2 = "今晚明晨";
           day3 = "明日白天";
+          newHour1 = "day";
+          newHour2 = "night";
+          newHour3 = "day";
           tonight.textContent = `${day1} ${start1}-${end1}`;
           daySecond.textContent = day2;
           dayThird.textContent = day3;
@@ -200,12 +184,40 @@ async function getData(place) {
           day1 = "今晚明晨";
           day2 = "明日白天";
           day3 = "明日晚上";
+          newHour1 = "night";
+          newHour2 = "day";
+          newHour3 = "night";
           tonight.textContent = `${day1} ${start1}-${end1}`;
           daySecond.textContent = day2;
           dayThird.textContent = day3;
         }
+
+        let img1 = data[i].Wx.Wx_firt.parameter.parameterValue;
+        let img2 = data[i].Wx.Wx_second.parameter.parameterValue;
+        let img3 = data[i].Wx.Wx_third.parameter.parameterValue;
+        const baseUrl =
+          "https://www.cwb.gov.tw/V8/assets/img/weather_icons/weathers/svg_icon/";
+        const images = [img1, img2, img3];
+        const formattedImages = images.map((img) => {
+          if (img < 10) {
+            return `0${img}`;
+          }
+          return img;
+        });
+        [img1, img2, img3] = formattedImages;
+        imgFirst.src = `${baseUrl}/${newHour1}/${formattedImages[0]}.svg`;
+        imgSecond.src = `${baseUrl}/${newHour2}/${formattedImages[1]}.svg`;
+        imgThird.src = `${baseUrl}/${newHour3}/${formattedImages[2]}.svg`;
       }
     }
+    Object.keys(iconId).forEach((key) => {
+      const eachImg = document.querySelector(`#${iconId[key]} img`);
+      let parameter = data[key - 1].Wx.Wx_firt.parameter.parameterValue;
+      if (parameter < 10) {
+        parameter = `0${parameter}`;
+      }
+      eachImg.src = `${baseUrl}/${newHour1}/${parameter}.svg`;
+    });
   } catch (error) {
     console.error(error);
   }
@@ -222,4 +234,6 @@ allForcast.addEventListener("click", () => {
 newForcast.addEventListener("click", () => {
   location.href = "/latest";
 });
-// weekForcast.addEventListener("click", () => {});
+weekForcast.addEventListener("click", () => {
+  location.href = "/weather_week";
+});
