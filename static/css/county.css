@@ -3,6 +3,7 @@
     margin: 0;
     box-sizing: border-box;
     background-color: #CDD1E1;
+    font-family: "Noto Sans TC", sans-serif;
 }
 
 header{
@@ -37,11 +38,12 @@ header{
     font-size: 30px;
     font-weight: bold;
     background-color: #4667D1;
+    letter-spacing: 0.25em
 }
 
 .title_button{
     display: flex;
-    gap: 30px;
+    gap: 60px;
     background-color: #4667D1;
 }
 
@@ -53,12 +55,13 @@ button{
     background-color: white;
     opacity: 0.6;
     cursor: pointer;
+    letter-spacing: 0.05em;
 }
 
 button:hover{
     opacity: 1;
     box-shadow: 3px 5px rgba(0, 0, 0, 0.305);
-    transition: .3s all ease-in;
+    transition: .2s all ease-in;
 }
 
 .active{
@@ -68,7 +71,7 @@ button:hover{
 
 main{
     padding: 50px;
-    height: 50px;
+    height: 800px;
     /* height: 150vh; */
     height: auto;
     background-color: #CDD1E1;
@@ -109,6 +112,12 @@ main{
     border-right: 1px solid rgb(85, 116, 200);
 }
 
+.day0:hover, .day1:hover, .day2:hover{
+    background-color: rgb(85, 116, 200);
+    color: white;
+    transition: 0.2s all ease-in;
+}
+
 .now_date{
     text-align: center;
     font-weight: bold;
@@ -143,7 +152,6 @@ svg{
 
 .map_county_box{
     color: rgb(80, 78, 78);
-    /* background-color: #d4d8e6ab; */
     box-shadow:4px 4px rgba(20%,20%,40%,0.5);
     text-align: center;
     padding: 5px 0;
@@ -352,3 +360,39 @@ svg{
 .rain img, .rain span{
     background-color: white;  
 }
+
+.footer {
+    background-color: #4667d1;
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-block {
+    height: 150px;
+    background-color: #4667d1;
+  }
+  .footer-text1 {
+    margin: 20px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 17px;
+    color: #ffffff;
+    background-color: #4667d1;
+  }
+  .footer-text2 {
+    margin: 5px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 17px;
+    color: #ffffff;
+    background-color: #4667d1;
+  }
+  .footer-text3 {
+    margin: 5px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 17px;
+    color: #ffffff;
+    background-color: #4667d1;
+  }

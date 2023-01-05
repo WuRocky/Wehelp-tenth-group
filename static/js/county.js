@@ -16,10 +16,12 @@ const right = document.querySelector(".right");
 const tabs =document.querySelector(".tabs");
 const countyBoxes = document.querySelector(".map_county_boxes");
 const nowDate = document.querySelector(".now_date");
+const footer = document.querySelector(".footer");
 
 getData();
 async function getData(){
     try{
+        footer.style.display = "none";
         let url = "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-01BF314A-7D06-48D8-85F9-412B4B1DE17B";
         response = await fetch(url);
         response = await response.json();
@@ -153,6 +155,7 @@ async function getData(){
                 document.getElementsByName(county.classList[1])[0].classList.remove("opacity");
             })
         });
+        footer.style.display = "flex";
         return;
     }
     catch(error){
@@ -167,6 +170,7 @@ day0.addEventListener("click", ()=>{
     day2.classList.remove("active_date");
     countyBoxes.innerHTML = "";
     tabs.innerHTML = "";
+    footer.style.display = "none";
 
     getData();
     async function getData(){
@@ -305,6 +309,7 @@ day0.addEventListener("click", ()=>{
                     document.getElementsByName(county.classList[1])[0].classList.remove("opacity");
                 })
             });
+            footer.style.display = "flex";
             return;
         }
         catch(error){
@@ -321,6 +326,7 @@ day1.addEventListener("click", ()=>{
     day2.classList.remove("active_date");
     countyBoxes.innerHTML = "";
     tabs.innerHTML = "";
+    footer.style.display = "none";
 
     getData();
     async function getData(){
@@ -449,6 +455,7 @@ day1.addEventListener("click", ()=>{
                     document.getElementsByName(county.classList[1])[0].classList.remove("opacity");
                 })
             });
+            footer.style.display = "flex";
             return;
         }
         catch(error){
@@ -465,6 +472,7 @@ day2.addEventListener("click", ()=>{
     day1.classList.remove("active_date");
     countyBoxes.innerHTML = "";
     tabs.innerHTML = "";
+    footer.style.display = "none";
 
     getData();
     async function getData(){
@@ -593,6 +601,7 @@ day2.addEventListener("click", ()=>{
                     document.getElementsByName(county.classList[1])[0].classList.remove("opacity");
                 })
             });
+            footer.style.display = "flex";
             return;
         }
         catch(error){
