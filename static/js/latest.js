@@ -15,7 +15,6 @@ async function getWeatherNow() {
 }
 
 function weatherStatus(result) {
-  // let value = result.Wx.parameterValue;
   for (let i = 0; i < result.length; i++) {
     let imgValue =
       (result[i].Wx.parameterValue < 10 ? 0 : "") + result[i].Wx.parameterValue;
@@ -117,7 +116,6 @@ function weatherRainfall(result) {
     } else {
       newValue = "04";
     }
-    console.log(newValue);
     let imgTag = document.createElement("img");
     imgTag.src = `https://www.cwb.gov.tw/V8/assets/img/icons/rain/ico-rain-${newValue}.svg`;
     imgTag.className = "image-style";
