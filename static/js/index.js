@@ -27,6 +27,11 @@ const imgThird = document.querySelector("#img-third");
 const allForcast = document.querySelector("#all-forcast");
 const weekForcast = document.querySelector("#week-forcast");
 const newForcast = document.querySelector("#new-forcast");
+const hour = new Date().getHours();
+const newHour = hour > 18 ? "night" : "day";
+window.addEventListener("load", () => {
+  getData("臺北市");
+});
 
 let currentMonth = new Date().getMonth() + 1; // 0-11
 if (currentMonth < 10) {
@@ -39,39 +44,60 @@ if (currentDate < 10) {
 date.textContent = `${currentMonth}/${currentDate}`;
 
 const gPosition = {
-  C10017: "310px,30px",
-  C65: "280px,65px",
-  C63: "288px,30px",
-  C68: "240px,55px",
-  C10004: "235px,95px",
-  C10018: "210px,80px",
-  C10005: "210px,130px",
-  C66: "180px,170px",
-  C10008: "220px,200px",
-  C10007: "150px,210px",
-  C10009: "130px,235px",
-  C10010: "170px,265px",
-  C10020: "142px,265px",
-  C67: "130px,320px",
-  C64: "130px,380px",
-  C10013: "170px,420px",
-  C10014: "225px,350px",
-  C10015: "275px,220px",
-  C10002: "300px,115px",
-  C09007: "20px,80px",
-  C09020: "20px,150px",
-  C10016: "15px,250px",
+  C10017: "310 30",
+  C65: "280 65",
+  C63: "288 30",
+  C68: "240 55",
+  C10004: "235 95",
+  C10018: "210 80",
+  C10005: "210 130",
+  C66: "180 170",
+  C10008: "220 200",
+  C10007: "150 210",
+  C10009: "130 235",
+  C10010: "170 265",
+  C10020: "142 265",
+  C67: "130 320",
+  C64: "130 380",
+  C10013: "170 420",
+  C10014: "225 350",
+  C10015: "275 220",
+  C10002: "300 115",
+  C09007: "20 80",
+  C09020: "20 150",
+  C10016: "15 250",
 };
 
-window.addEventListener("load", () => {
-  getData("臺北市");
-});
+const iconId = {
+  19: "icon-1",
+  2: "icon-2",
+  6: "icon-3",
+  14: "icon-4",
+  4: "icon-22",
+  5: "icon-5",
+  9: "icon-6",
+  12: "icon-7",
+  15: "icon-18",
+  21: "icon-8",
+  10: "icon-9",
+  1: "icon-11",
+  3: "icon-12",
+  7: "icon-10",
+  16: "icon-19",
+  18: "icon-13",
+  13: "icon-14",
+  11: "icon-16",
+  8: "icon-15",
+  22: "icon-17",
+  17: "icon-20",
+  20: "icon-21",
+};
 
 Object.keys(gPosition).forEach((key) => {
   const element = document.querySelector(`#${key}`);
   const value = gPosition[key];
   element.addEventListener("click", () => {
-    pin.style.transform = `translate(${value})`;
+    pin.setAttribute("transform", `translate(${value})`);
     const ele = document.querySelector(`#${key} desc`);
     const place = ele.textContent;
     getData(place);
@@ -97,6 +123,17 @@ async function getData(place) {
     const response = await fetch("/api/weather");
     const data = await response.json();
     console.log(data);
+    const baseUrl =
+      "https://www.cwb.gov.tw/V8/assets/img/weather_icons/weathers/svg_icon/";
+
+    Object.keys(iconId).forEach((key) => {
+      const eachImg = document.querySelector(`#${iconId[key]} img`);
+      let parameter = data[key - 1].Wx.Wx_firt.parameter.parameterValue;
+      if (parameter < 10) {
+        parameter = `0${parameter}`;
+      }
+      eachImg.src = `${baseUrl}/${newHour}/${parameter}.svg`;
+    });
     for (let i = 0; i < data.length; i++) {
       if (data[i]["locationName"] === place) {
         city.textContent = data[i]["locationName"];
@@ -105,7 +142,6 @@ async function getData(place) {
         let img3 = data[i].Wx.Wx_third.parameter.parameterValue;
         const baseUrl =
           "https://www.cwb.gov.tw/V8/assets/img/weather_icons/weathers/svg_icon/";
-
         const images = [img1, img2, img3];
         const formattedImages = images.map((img) => {
           if (img < 10) {
@@ -114,8 +150,6 @@ async function getData(place) {
           return img;
         });
         [img1, img2, img3] = formattedImages;
-        const hour = new Date().getHours();
-        const newHour = hour > 18 ? "night" : "day";
         imgFirst.src = `${baseUrl}/${newHour}/${formattedImages[0]}.svg`;
         imgSecond.src = `${baseUrl}/${newHour}/${formattedImages[1]}.svg`;
         imgThird.src = `${baseUrl}/${newHour}/${formattedImages[2]}.svg`;
@@ -182,7 +216,9 @@ function getHoursAndMinutes(dateString) {
   return time.split(":")[0] + ":" + time.split(":")[1];
 }
 
-// allForcast.addEventListener("click", () => {});
+allForcast.addEventListener("click", () => {
+  location.href = "/county";
+});
 newForcast.addEventListener("click", () => {
   location.href = "/latest";
 });
