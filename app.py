@@ -30,4 +30,4 @@ def weather_week():
 app.register_blueprint(weather_api)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(port=3000, debug=True)
