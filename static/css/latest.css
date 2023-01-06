@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 svg {
-  height: 70vh;
+  height: 80vh;
 }
 body {
   background-color: #cdd1e1;
@@ -161,6 +161,9 @@ path {
 }
 .map {
   margin-right: 61.91px;
+  height: 70vh;
+  position: relative;
+  z-index: 0;
 }
 .list1,
 .list2,
@@ -212,10 +215,7 @@ path {
 .temp {
   text-align: center;
 }
-.map {
-  position: relative;
-  z-index: 0;
-}
+
 .map-block-1,
 .map-block-2,
 .map-block-3 {
