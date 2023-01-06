@@ -269,7 +269,7 @@ body {
         height: 300px;
         background-color: #ffffff;
         border-radius: 30px;
-        padding: 45px;
+        padding: 40px;
         .col-day {
           color: black;
           display: flex;
@@ -294,6 +294,7 @@ body {
             }
           }
           .tem {
+            padding-bottom: 3px;
             i:last-child:before {
               content: " - ";
             }
@@ -332,6 +333,37 @@ body {
           border: 3px solid $primary-color;
         }
       }
+    }
+  }
+}
+.footer {
+  background-color: #4667d1;
+  grid-area: footer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .footer-block {
+    height: 150px;
+    .footer-text1 {
+      margin: 20px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 17px;
+      color: #ffffff;
+    }
+    .footer-text2 {
+      margin: 5px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 17px;
+      color: #ffffff;
+    }
+    .footer-text3 {
+      margin: 5px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 17px;
+      color: #ffffff;
     }
   }
 }

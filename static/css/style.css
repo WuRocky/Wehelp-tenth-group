@@ -264,7 +264,7 @@ body .weather .weather-detail .tomorrow {
   height: 300px;
   background-color: #ffffff;
   border-radius: 30px;
-  padding: 45px;
+  padding: 40px;
 }
 body .weather .weather-detail .tomorrow .col-day {
   color: black;
@@ -289,6 +289,9 @@ body .weather .weather-detail .tomorrow .col-day .icon {
 }
 body .weather .weather-detail .tomorrow .col-day .icon img {
   width: 100%;
+}
+body .weather .weather-detail .tomorrow .col-day .tem {
+  padding-bottom: 3px;
 }
 body .weather .weather-detail .tomorrow .col-day .tem i:last-child:before {
   content: " - ";
@@ -322,4 +325,36 @@ body .weather .allButton .btn {
 body .weather .allButton .btn:hover {
   box-shadow: 0 0 10px 0 #4667d1 inset, 0 0 20px 2px #4667d1;
   border: 3px solid #4667d1;
+}
+
+.footer {
+  background-color: #4667d1;
+  grid-area: footer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer .footer-block {
+  height: 150px;
+}
+.footer .footer-block .footer-text1 {
+  margin: 20px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 17px;
+  color: #ffffff;
+}
+.footer .footer-block .footer-text2 {
+  margin: 5px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 17px;
+  color: #ffffff;
+}
+.footer .footer-block .footer-text3 {
+  margin: 5px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 17px;
+  color: #ffffff;
 }/*# sourceMappingURL=style.css.map */
