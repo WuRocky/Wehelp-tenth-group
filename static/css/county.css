@@ -50,7 +50,7 @@ header{
 button{
     padding: 13px 30px;
     font-size: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
     border: none;
     background-color: white;
     opacity: 0.6;
@@ -181,14 +181,25 @@ svg{
 
 .map_img{
     width: 50%;
+    background: none;
+}
+
+.temperature{
+    background: none;
 }
 
 .lower_temperature{
     color: #2555cf;
+    background: none;
 }
 
 .hight_temperature{
     color: #cf2544;
+    background: none;
+}
+
+.tilde, .degreeC, .city{
+    background: none;
 }
 
 .map_county_box[name=C6]{

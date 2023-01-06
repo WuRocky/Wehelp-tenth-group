@@ -31,6 +31,7 @@ body {
 
 .Wtitle img {
     margin-right: 10px;
+    cursor: pointer;
 }
 
 .menu {
@@ -46,7 +47,7 @@ body {
     width: 200px;
     height: 50px;
     border-radius: 10px;
-    margin: 0px 15px;
+    margin: 0px 30px;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -74,6 +75,8 @@ body {
 .content {
     background-color: #DFE4F2;
     margin-top: 75px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
 }
 
 /* ----------- */
@@ -82,6 +85,7 @@ table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    margin-bottom: 100px;
 }
 
 .table_top {
@@ -123,6 +127,16 @@ th {
     height: 50px;
 }
 
+.signal img {
+    width: 30px;
+    margin-right: 5px;
+}
+
+
+.signal p {
+    letter-spacing: 1px;
+}
+
 .night {
     height: 50px;
 }
@@ -149,4 +163,54 @@ th {
 #day6,
 #day7 {
     width: 160px;
+}
+
+
+/* -------------------------- */
+
+.forecast:hover,
+.latest:hover,
+.weekWeather:hover {
+    background-color: #FFFFFF;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.215);
+}
+
+
+
+
+/* -------------------------- */
+.footer {
+    background-color: #4667d1;
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-block {
+    height: 150px;
+}
+
+.footer-text1 {
+    margin: 20px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 17px;
+    color: #ffffff;
+}
+
+.footer-text2 {
+    margin: 5px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 17px;
+    color: #ffffff;
+}
+
+.footer-text3 {
+    margin: 5px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 17px;
+    color: #ffffff;
 }

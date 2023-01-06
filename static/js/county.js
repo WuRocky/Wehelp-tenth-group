@@ -3,6 +3,11 @@ title.addEventListener("click", ()=>{
     location.href = "/";
 });
 
+const weekButton = document.querySelector(".week_weather_button");
+weekButton.addEventListener("click", ()=>{
+    location.href = "/weather_week";
+});
+
 const newButton = document.querySelector(".new_weather_button");
 newButton.addEventListener("click", ()=>{
     location.href = "/latest";
@@ -111,6 +116,7 @@ async function getData(){
             countyBox.appendChild(temperature);
     
             const tilde = document.createElement("span");
+            tilde.setAttribute("class", "tilde");
             tilde.innerHTML = " ~ ";
             temperature.appendChild(tilde);
     
@@ -120,6 +126,7 @@ async function getData(){
             temperature.appendChild(hightTemperature);
     
             const degreeC = document.createElement("span");
+            degreeC.setAttribute("class", "degreeC");
             degreeC.innerHTML = "°C";
             temperature.appendChild(degreeC);
     
@@ -264,6 +271,7 @@ day0.addEventListener("click", ()=>{
                 countyBox.appendChild(temperature);
         
                 const tilde = document.createElement("span");
+                tilde.setAttribute("class", "tilde");
                 tilde.innerHTML = " ~ ";
                 temperature.appendChild(tilde);
         
@@ -273,6 +281,7 @@ day0.addEventListener("click", ()=>{
                 temperature.appendChild(hightTemperature);
         
                 const degreeC = document.createElement("span");
+                degreeC.setAttribute("class", "degreeC");
                 degreeC.innerHTML = "°C";
                 temperature.appendChild(degreeC);
         
@@ -410,6 +419,7 @@ day1.addEventListener("click", ()=>{
                 countyBox.appendChild(temperature);
         
                 const tilde = document.createElement("span");
+                tilde.setAttribute("class", "tilde");
                 tilde.innerHTML = " ~ ";
                 temperature.appendChild(tilde);
         
@@ -419,6 +429,7 @@ day1.addEventListener("click", ()=>{
                 temperature.appendChild(hightTemperature);
         
                 const degreeC = document.createElement("span");
+                degreeC.setAttribute("class", "degreeC");
                 degreeC.innerHTML = "°C";
                 temperature.appendChild(degreeC);
         
@@ -556,6 +567,7 @@ day2.addEventListener("click", ()=>{
                 countyBox.appendChild(temperature);
         
                 const tilde = document.createElement("span");
+                tilde.setAttribute("class", "tilde");
                 tilde.innerHTML = " ~ ";
                 temperature.appendChild(tilde);
         
@@ -565,6 +577,7 @@ day2.addEventListener("click", ()=>{
                 temperature.appendChild(hightTemperature);
         
                 const degreeC = document.createElement("span");
+                degreeC.setAttribute("class", "degreeC");
                 degreeC.innerHTML = "°C";
                 temperature.appendChild(degreeC);
         
