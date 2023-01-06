@@ -30,7 +30,8 @@ const imgThird = document.querySelector("#img-third");
 const allForcast = document.querySelector("#all-forcast");
 const weekForcast = document.querySelector("#week-forcast");
 const newForcast = document.querySelector("#new-forcast");
-
+let now = new Date();
+// console.log(now.getHours());
 window.addEventListener("load", () => {
   getData("臺北市");
 });
@@ -160,11 +161,11 @@ async function getData(place) {
         timeSecond.textContent = `${start2}-${end2}`;
         timeThird.textContent = `${start3}-${end3}`;
 
-        if (start1 === "00:00") {
-          day1 = "今日凌晨";
-          day2 = "今日白天";
-          day3 = "今日晚上";
-          newHour1 = "day";
+        if (start1 === "00:00" && now.getHours() < 24) {
+          day1 = "今晚明晨";
+          day2 = "明日白天";
+          day3 = "明日晚上";
+          newHour1 = "night";
           newHour2 = "day";
           newHour3 = "night";
           tonight.textContent = `${day1} ${start1}-${end1}`;
@@ -185,6 +186,16 @@ async function getData(place) {
           day2 = "明日白天";
           day3 = "明日晚上";
           newHour1 = "night";
+          newHour2 = "day";
+          newHour3 = "night";
+          tonight.textContent = `${day1} ${start1}-${end1}`;
+          daySecond.textContent = day2;
+          dayThird.textContent = day3;
+        } else if (start1 === "00:00" && now.getHours() === 1) {
+          day1 = "今日凌晨";
+          day2 = "今日白天";
+          day3 = "今日晚上";
+          newHour1 = "day";
           newHour2 = "day";
           newHour3 = "night";
           tonight.textContent = `${day1} ${start1}-${end1}`;
