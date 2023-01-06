@@ -9,6 +9,9 @@
 ### 最新天氣觀測
 <img src="https://user-images.githubusercontent.com/84265782/210945405-c789a4df-f8d6-4591-8832-786e47ff3f9d.png" alt="Cover" width="70%"/>
 
+### 一週天氣預報
+<img src="https://user-images.githubusercontent.com/84265782/210957048-ae559fce-4892-4e61-a6a3-0dad1c555fbc.png" alt="Cover" width="70%"/>
+
 ## 組員分工
 ### 前後端分離
 #### 前端
