@@ -1,4 +1,7 @@
 import requests
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 ### weather_data ###
 def weather_data(
@@ -50,7 +53,7 @@ def weather_data(
 
 
 def get_weather():
-  get_weather = "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-76A83F0A-AD80-483B-A8FA-0FADB18A69F7"
+  get_weather = os.getenv("get_weather")
   
   data = requests.get(get_weather).json()
   data_weather = data["records"]["location"]

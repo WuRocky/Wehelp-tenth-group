@@ -1,5 +1,7 @@
 import requests
-
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 ### weather_now_data ###
 def weather_now_data( locationName, Wx, TEMP_value,  HUMD_value, H_24R_value):
@@ -13,14 +15,14 @@ def weather_now_data( locationName, Wx, TEMP_value,  HUMD_value, H_24R_value):
 
 
 def get_weather_now():
-  get_weather_now = "https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=CWB-76A83F0A-AD80-483B-A8FA-0FADB18A69F7&stationId=CAL010,466881,467480,CAD020,CAD110,466910,467410,467080,CAE010,CAJ020,466990,467490,467660,467050,467650,467440,A0W030,CAQ020,466940,467350,A0G720,CAW010&elementName=TEMP,HUMD,24R&parameterName=CITY"
+  get_weather_now = os.getenv("get_weather_now")
   
   data_now = requests.get(get_weather_now).json()
   data_weather_now = data_now["records"]["location"]
 
   get_weather_now_api = []
 
-  get_weather = "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-76A83F0A-AD80-483B-A8FA-0FADB18A69F7"
+  get_weather = os.getenv("get_weather")
   data = requests.get(get_weather).json()
   data_weather = data["records"]["location"]
 
