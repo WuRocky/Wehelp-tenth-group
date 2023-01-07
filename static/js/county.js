@@ -3,6 +3,11 @@ title.addEventListener("click", ()=>{
     location.href = "/";
 });
 
+const weekButton = document.querySelector(".week_weather_button");
+weekButton.addEventListener("click", ()=>{
+    location.href = "/weather_week";
+});
+
 const newButton = document.querySelector(".new_weather_button");
 newButton.addEventListener("click", ()=>{
     location.href = "/latest";
@@ -16,10 +21,12 @@ const right = document.querySelector(".right");
 const tabs =document.querySelector(".tabs");
 const countyBoxes = document.querySelector(".map_county_boxes");
 const nowDate = document.querySelector(".now_date");
+const footer = document.querySelector(".footer");
 
 getData();
 async function getData(){
     try{
+        footer.style.display = "none";
         let url = "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-01BF314A-7D06-48D8-85F9-412B4B1DE17B";
         response = await fetch(url);
         response = await response.json();
@@ -109,6 +116,7 @@ async function getData(){
             countyBox.appendChild(temperature);
     
             const tilde = document.createElement("span");
+            tilde.setAttribute("class", "tilde");
             tilde.innerHTML = " ~ ";
             temperature.appendChild(tilde);
     
@@ -118,6 +126,7 @@ async function getData(){
             temperature.appendChild(hightTemperature);
     
             const degreeC = document.createElement("span");
+            degreeC.setAttribute("class", "degreeC");
             degreeC.innerHTML = "°C";
             temperature.appendChild(degreeC);
     
@@ -153,6 +162,7 @@ async function getData(){
                 document.getElementsByName(county.classList[1])[0].classList.remove("opacity");
             })
         });
+        footer.style.display = "flex";
         return;
     }
     catch(error){
@@ -167,6 +177,7 @@ day0.addEventListener("click", ()=>{
     day2.classList.remove("active_date");
     countyBoxes.innerHTML = "";
     tabs.innerHTML = "";
+    footer.style.display = "none";
 
     getData();
     async function getData(){
@@ -260,6 +271,7 @@ day0.addEventListener("click", ()=>{
                 countyBox.appendChild(temperature);
         
                 const tilde = document.createElement("span");
+                tilde.setAttribute("class", "tilde");
                 tilde.innerHTML = " ~ ";
                 temperature.appendChild(tilde);
         
@@ -269,6 +281,7 @@ day0.addEventListener("click", ()=>{
                 temperature.appendChild(hightTemperature);
         
                 const degreeC = document.createElement("span");
+                degreeC.setAttribute("class", "degreeC");
                 degreeC.innerHTML = "°C";
                 temperature.appendChild(degreeC);
         
@@ -305,6 +318,7 @@ day0.addEventListener("click", ()=>{
                     document.getElementsByName(county.classList[1])[0].classList.remove("opacity");
                 })
             });
+            footer.style.display = "flex";
             return;
         }
         catch(error){
@@ -321,6 +335,7 @@ day1.addEventListener("click", ()=>{
     day2.classList.remove("active_date");
     countyBoxes.innerHTML = "";
     tabs.innerHTML = "";
+    footer.style.display = "none";
 
     getData();
     async function getData(){
@@ -404,6 +419,7 @@ day1.addEventListener("click", ()=>{
                 countyBox.appendChild(temperature);
         
                 const tilde = document.createElement("span");
+                tilde.setAttribute("class", "tilde");
                 tilde.innerHTML = " ~ ";
                 temperature.appendChild(tilde);
         
@@ -413,6 +429,7 @@ day1.addEventListener("click", ()=>{
                 temperature.appendChild(hightTemperature);
         
                 const degreeC = document.createElement("span");
+                degreeC.setAttribute("class", "degreeC");
                 degreeC.innerHTML = "°C";
                 temperature.appendChild(degreeC);
         
@@ -449,6 +466,7 @@ day1.addEventListener("click", ()=>{
                     document.getElementsByName(county.classList[1])[0].classList.remove("opacity");
                 })
             });
+            footer.style.display = "flex";
             return;
         }
         catch(error){
@@ -465,6 +483,7 @@ day2.addEventListener("click", ()=>{
     day1.classList.remove("active_date");
     countyBoxes.innerHTML = "";
     tabs.innerHTML = "";
+    footer.style.display = "none";
 
     getData();
     async function getData(){
@@ -548,6 +567,7 @@ day2.addEventListener("click", ()=>{
                 countyBox.appendChild(temperature);
         
                 const tilde = document.createElement("span");
+                tilde.setAttribute("class", "tilde");
                 tilde.innerHTML = " ~ ";
                 temperature.appendChild(tilde);
         
@@ -557,6 +577,7 @@ day2.addEventListener("click", ()=>{
                 temperature.appendChild(hightTemperature);
         
                 const degreeC = document.createElement("span");
+                degreeC.setAttribute("class", "degreeC");
                 degreeC.innerHTML = "°C";
                 temperature.appendChild(degreeC);
         
@@ -593,6 +614,7 @@ day2.addEventListener("click", ()=>{
                     document.getElementsByName(county.classList[1])[0].classList.remove("opacity");
                 })
             });
+            footer.style.display = "flex";
             return;
         }
         catch(error){
