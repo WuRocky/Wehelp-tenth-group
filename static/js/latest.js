@@ -62,6 +62,7 @@ function weatherHumidity(result) {
   for (let i = 0; i < result.length; i++) {
     // 濕度
     let newHUMD = Number(result[i].HUMD) * 100;
+    console.log(Math.round(newHUMD));
     let newValue = Number(result[i].HUMD.substring(0, 3)) * 10;
     let imgSrc = `https://www.cwb.gov.tw/V8/assets/img/icons/humidity/humidity${newValue}.svg`;
     let imgTagClassName = "image-style";
@@ -75,7 +76,7 @@ function weatherHumidity(result) {
     imgTag.className = imgTagClassName;
     let tempTag = document.createElement("div");
     tempTag.className = "temp";
-    tempTag.textContent = `${newHUMD}%`;
+    tempTag.textContent = `${Math.round(newHUMD)}%`;
     let weatherTag = document.createElement("div");
     weatherTag.className = "weather";
     weatherTag.appendChild(imgTag);
