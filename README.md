@@ -1,16 +1,27 @@
 # [世界無敵氣象網](https://lit-inlet-47967.herokuapp.com/)
 ## 畫面展示
 ### 首頁
+
+<p align="center">
 <img src="https://user-images.githubusercontent.com/84265782/210944142-76a7125b-163f-4a0e-a128-134f5541e83b.png" alt="Cover" width="70%"/>
+</p>
+
 
 ### 縣市預報總覽
+<p align="center">
 <img src="https://user-images.githubusercontent.com/84265782/210945235-18913b02-698c-4fc0-be56-3ce319ac1cf4.png" alt="Cover" width="70%"/>
+</p>
 
 ### 最新天氣觀測
+<p align="center">
 <img src="https://user-images.githubusercontent.com/84265782/210945405-c789a4df-f8d6-4591-8832-786e47ff3f9d.png" alt="Cover" width="70%"/>
+</p>
 
 ### 一週天氣預報
+<p align="center">
 <img src="https://user-images.githubusercontent.com/84265782/210957048-ae559fce-4892-4e61-a6a3-0dad1c555fbc.png" alt="Cover" width="70%"/>
+</p>
+
 
 ## 組員分工
 ### 前後端分離
