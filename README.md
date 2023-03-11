@@ -1,5 +1,4 @@
 # [世界無敵氣象網](https://wehelp-tenth-group.herokuapp.com/){:target="_blank"}
-
 ## 畫面展示
 ### 首頁
 <img src="https://user-images.githubusercontent.com/84265782/210944142-76a7125b-163f-4a0e-a128-134f5541e83b.png" alt="Cover" width="70%"/>
